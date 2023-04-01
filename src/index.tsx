@@ -5,13 +5,17 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { RouterProvider } from "react-router-dom";
 import index from "./routes";
+import { Provider } from "react-redux";
+import { store } from "./services";
 
 const root = ReactDOM.createRoot(
 	document.getElementById("root") as HTMLElement,
 );
 root.render(
 	<React.StrictMode>
-		<RouterProvider router={index} />
+		<Provider store={store}>
+			<RouterProvider router={index} />
+		</Provider>
 		{/* <App /> */}
 	</React.StrictMode>,
 );

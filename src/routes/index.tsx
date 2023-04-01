@@ -4,6 +4,7 @@ import { WebLayout } from "../components";
 import { ErrorBoundary } from "../utils";
 
 const Home = lazy(() => import("../pages/Home"));
+const SignUp = lazy(() => import("../pages/SignUp"));
 
 const index = createBrowserRouter([
 	{
@@ -16,6 +17,14 @@ const index = createBrowserRouter([
 				element: <Home />,
 			},
 		],
+
+		errorElement: <ErrorBoundary />,
+		hasErrorBoundary: true,
+	},
+
+	{
+		path: "/signup",
+		element: <SignUp />,
 
 		errorElement: <ErrorBoundary />,
 		hasErrorBoundary: true,
